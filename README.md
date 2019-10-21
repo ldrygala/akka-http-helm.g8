@@ -1,4 +1,8 @@
-A [Giter8][g8] template for akka-http application with helm.
+A [Giter8](http://www.foundweekends.org/giter8/) template for akka-http application with helm deploy chart.
+
+```
+g8 ldrygala/akka-http-helm.g8
+```
 
 Template license
 ----------------
