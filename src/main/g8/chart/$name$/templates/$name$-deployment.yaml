@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app.fullname" . }}
+  labels:
+    app: {{ include "app.name" . }}
+    chart: {{ include "$name$.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.$name;format="word-space,camel"$.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "app.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      annotations:
+        checksum/$name$-secret: {{ include (print \$.Template.BasePath "/$name$-secret.yaml") . | sha256sum }}
+        checksum/$name$-configmap: {{ include (print \$.Template.BasePath "/$name$-configmap.yaml") . | sha256sum }}
+      labels:
+        app: {{ include "app.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: $name$
+        image: {{ include "app.image" . }}
+        imagePullPolicy: {{ .Values.$name;format="word-space,camel"$.pullPolicy }}
+        resources:
+{{ toYaml .Values.$name;format="word-space,camel"$.resources | indent 10 }}
+        envFrom:
+          - configMapRef:
+              name: {{ include "app.fullname" . }}
+          - secretRef:
+              name: {{ include "app.fullname" . }}
+        livenessProbe:
+          httpGet:
+            path: /health/alive
+            port: containerPort
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: containerPort
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          failureThreshold: 2
+        ports:
+        - name: containerPort
+          protocol: TCP
+          containerPort: 8000

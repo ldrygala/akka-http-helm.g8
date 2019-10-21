@@ -1,0 +1,127 @@
+INFO  time: initialize in 0.39s
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/Stub.scala
+INFO  no build target: using presentation compiler with only scala-library
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/Stub.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/Stub.scala' because it doesn't belong to a build target.
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/Stub.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$organization__packaged$.Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+INFO  shutting down Metals
+INFO  time: initialize in 0.39s
+INFO  skipping build import with status 'Requested'
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+INFO  no build target: using presentation compiler with only scala-library
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala' because it doesn't belong to a build target.
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala' because it doesn't belong to a build target.
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+Oct 06, 2019 1:22:30 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:37)
+
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala' because it doesn't belong to a build target.
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/ApiRoute.scala
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala' because it doesn't belong to a build target.
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+INFO  shutting down Metals
+INFO  time: initialize in 0.48s
+INFO  skipping build import with status 'Requested'
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+INFO  shutting down Metals
+INFO  time: initialize in 0.54s
+INFO  skipping build import with status 'Requested'
+INFO  shutting down Metals
+INFO  time: initialize in 0.5s
+INFO  skipping build import with status 'Requested'
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/project/plugins.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/main/scala/$package$/Main.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/main/scala/$package$/route/HealthCheckRoute.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala
+INFO  no build target: using presentation compiler with only scala-library
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala' because it doesn't belong to a build target.
+Oct 11, 2019 1:14:28 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:37)
+
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala' because it doesn't belong to a build target.
+WARN  code navigation does not work for the file '/Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala' because it doesn't belong to a build target.
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/build.sbt
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala
+INFO  shutting down Metals
+INFO  time: initialize in 0.35s
+INFO  skipping build import with status 'Requested'
+WARN  no build target: /Users/lukasz.drygala/gwi-projects/akka-http-helm.g8/src/main/g8/src/test/scala/$package$/route/HealthCheckRouteTest.scala

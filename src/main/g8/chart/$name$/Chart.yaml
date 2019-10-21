@@ -1,0 +1,4 @@
+description: A Helm chart for $name$
+name: $name$
+version: 0.0.1
+appVersion: 0.1
