@@ -20,7 +20,13 @@ lazy val root = (project in file(".")).
         "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion % Test,
         "com.typesafe.akka" %% "akka-testkit" % AkkaVersion % Test
       )
+
+      val logging = Seq(
+        "com.typesafe.scala-logging" %% "scala-logging"           % "$scala_logging_version$",
+        "ch.qos.logback"             % "logback-classic"          % "$logback_version$",
+        "net.logstash.logback"       % "logstash-logback-encoder" % "$logstash_encoder_version$",
+      )
     
-      akka ++ testing
+      akka ++ logging ++ testing
     }
   )

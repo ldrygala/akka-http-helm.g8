@@ -4,11 +4,12 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import $package$.route.{ApiRoute, HealthCheckRoute}
+import com.typesafe.scalalogging.StrictLogging
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
 
-object Main extends App {
+object Main extends App with StrictLogging {
   implicit val actorSystem: ActorSystem           = ActorSystem("$name$")
   implicit val materializer: ActorMaterializer    = ActorMaterializer()
   implicit val executionContext: ExecutionContext = actorSystem.dispatcher
@@ -22,20 +23,20 @@ object Main extends App {
   val serverBinding = Http().bindAndHandle(apiRoute.route, host, port)
   serverBinding.onComplete {
     case Success(_) =>
-      println("$name$ is up and running on " + host + ":" + port)
+      logger.info("$name$ is up and running on " + host + ":" + port)
     case Failure(e) =>
-      Console.err.println("$name$ could not start", e)
+      logger.error("$name$ could not start", e)
   }
 
   scala.sys.addShutdownHook {
-    println("Shutting down")
+    logger.info("Shutting down")
     serverBinding
       .flatMap(_.unbind())
       .onComplete {
         case Success(_) =>
-          println("Unbind succeed")
+          logger.info("Unbind succeed")
         case Failure(ex) =>
-          Console.err.println("Unbind failed", ex)
+          logger.error("Unbind failed", ex)
       }
   }
 }
