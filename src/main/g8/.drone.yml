@@ -1,0 +1,139 @@
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+  
+concurrency:
+  limit: 2  
+
+steps:
+- name: build
+  image: lustefaniak/sbt:graalvm_$sbt_version$_$scala_version$
+  commands:
+  - sbt -Dsbt.ivy.home=/cache/.ivy2 -Divy.home=/cache/.ivy2 -Dfile.encoding=utf-8 coverage test:test coverageReport
+  volumes:
+  - name: sbtCache
+    path: /cache
+
+- name: codecov
+  image: robertstettner/drone-codecov
+  settings:
+    flags:
+    - unit
+    token:
+      from_secret: $drone_codecov_secret$
+  depends_on:
+  - build
+
+- name: build-image
+  image: lustefaniak/sbt:graalvm_$sbt_version$_$scala_version$
+  commands:
+  - rm -rf project/target
+  - sbt -Dsbt.ivy.home=/cache/.ivy2 -Divy.home=/cache/.ivy2 -Dfile.encoding=utf-8 docker:stage
+  volumes:
+  - name: sbtCache
+    path: /cache
+  when:
+    event:
+    - promote
+  depends_on:
+    - build
+
+- name: push-image-staging
+  image: plugins/gcr
+  settings:
+    context: ./target/docker/stage
+    dockerfile: ./target/docker/stage/Dockerfile
+    registry: $gcr_registry$
+    repo: $staging_gcr_repo$
+    tags:
+    - latest
+    - "\${DRONE_DEPLOY_TO}-\${DRONE_COMMIT_SHA:0:7}"
+  environment:
+    GOOGLE_CREDENTIALS:
+      from_secret: $drone_staging_google_credentials_secret$
+  when:
+    event:
+    - promote
+    target:
+    - staging
+  depends_on:
+  - build-image
+
+- name: push-image-production
+  image: plugins/gcr
+  settings:
+    context: ./target/docker/stage
+    dockerfile: ./target/docker/stage/Dockerfile
+    registry: $gcr_registry$
+    repo: $production_gcr_repo$
+    tags:
+    - latest
+    - "\${DRONE_DEPLOY_TO}-\${DRONE_COMMIT_SHA:0:7}"
+  environment:
+    GOOGLE_CREDENTIALS:
+      from_secret: $drone_production_google_credentials_secret$
+  when:
+    event:
+    - promote
+    target:
+    - production
+  depends_on:
+  - build-image  
+
+- name: helm-deploy-staging
+  image: gcr.io/gwi-host-net/drone-helm:2.14.3
+  settings:
+    gke_cluster_name: $staging_gke_cluster_name$
+    gke_project: $gke_project$
+    gke_region: $staging_gke_region$
+    google_application_credentials:
+      from_secret: $drone_staging_google_credentials_secret$
+    helm_chart_path: ./chart/$name$
+    helm_release_name: staging-$name$
+    helm_release_namespace: $helm_namespace$
+    helm_values:
+    - $name;format="word-space,camel"$.image.tag=staging-\${DRONE_COMMIT_SHA:0:7}
+    helm_values_files:
+    - ./chart/$name$/values.yaml
+    - ./chart/$name$/staging/values.yaml
+    # - ./chart/$name$/staging/secrets.yaml
+  when:
+    event:
+    - promote
+    target:
+    - staging
+  depends_on:
+  - push-image-staging
+
+- name: helm-deploy-production
+  image: gcr.io/gwi-host-net/drone-helm:2.14.3
+  settings:
+    gke_cluster_name: $production_gke_cluster_name$
+    gke_project: $gke_project$
+    gke_region: $production_gke_region$
+    google_application_credentials:
+      from_secret: $drone_production_google_credentials_secret$
+    helm_chart_path: ./chart/$name$
+    helm_release_name: production-$name$
+    helm_release_namespace: $helm_namespace$
+    helm_values:
+    - $name;format="word-space,camel"$.image.tag=production-\${DRONE_COMMIT_SHA:0:7}
+    helm_values_files:
+    - ./chart/$name$/values.yaml
+    - ./chart/$name$/production/values.yaml
+    # - ./chart/$name$/production/secrets.yaml
+  when:
+    event:
+    - promote
+    target:
+    - production
+  depends_on:
+  - push-image-production
+
+volumes:
+- name: sbtCache
+  host:
+    path: /var/lib/docker/sbt
