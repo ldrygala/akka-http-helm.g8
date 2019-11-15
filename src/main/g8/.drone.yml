@@ -87,7 +87,7 @@ steps:
   image: gcr.io/gwi-host-net/drone-helm:2.14.3
   settings:
     gke_cluster_name: $staging_gke_cluster_name$
-    gke_project: $gke_project$
+    gke_project: $staging_gke_project$
     gke_region: $staging_gke_region$
     google_application_credentials:
       from_secret: $drone_staging_google_credentials_secret$
@@ -112,7 +112,7 @@ steps:
   image: gcr.io/gwi-host-net/drone-helm:2.14.3
   settings:
     gke_cluster_name: $production_gke_cluster_name$
-    gke_project: $gke_project$
+    gke_project: $production_gke_project$
     gke_region: $production_gke_region$
     google_application_credentials:
       from_secret: $drone_production_google_credentials_secret$
