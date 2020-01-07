@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  description: Public $name$ API
+  version: '0.1'
+  title: $name$
+servers:
+  - url: 'https://$name$-api-staging.in.globalwebindex.com'
+    description: Staging environment
+  - url: 'http://localhost:8080'
+    description: Localhost
+tags:
+  - name: health
+    description: System health checkers
+paths:
+
+  /health/ready:
+    get:
+      summary: Check readiness of the system
+      description: 'The k8s kubelet uses readiness probes to know when a Container is ready to start accepting traffic. A Pod is considered ready when all of its Containers are ready. One use of this signal is to control which Pods are used as backends for Services. When a Pod is not ready, it is removed from Service load balancers.'
+      tags:
+        - health
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: OK
+  /health/alive:
+    get:
+      summary: Check liveness of the system
+      description: 'The k8s kubelet uses liveness probes to know when to restart a Container. For example, liveness probes could catch a deadlock, where an application is running, but unable to make progress. Restarting a Container in such a state can help to make the application more available despite bugs.'
+      tags:
+        - health
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: OK
+#components:
+#  parameters:
+#  schemas:

@@ -3,7 +3,7 @@ package $package$
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
-import $package$.route.{ApiRoute, HealthCheckRoute}
+import $package$.route.{ApiRoute, HealthCheckRoute, SwaggerSiteRoute}
 import com.typesafe.scalalogging.StrictLogging
 
 import scala.concurrent.ExecutionContext
@@ -17,8 +17,12 @@ object Main extends App with StrictLogging {
   val host = "0.0.0.0"
   val port = 8080
 
-  val healtCheckRoute = new HealthCheckRoute()
-  val apiRoute        = new ApiRoute(healtCheckRoute)
+  val healthCheckRoute = new HealthCheckRoute()
+  val swaggerSiteRoute = new SwaggerSiteRoute()
+  val apiRoute = new ApiRoute(
+    routes = Seq(healthCheckRoute, swaggerSiteRoute),
+    apiRoutes = Seq.empty
+  )
 
   val serverBinding = Http().bindAndHandle(apiRoute.route, host, port)
   serverBinding.onComplete {
