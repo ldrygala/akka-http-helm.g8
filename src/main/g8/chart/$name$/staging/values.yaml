@@ -1,2 +1,3 @@
 $name;format="word-space,camel"$:
-  # define staging values here
+    image:
+      name: "$gcr_registry$/staging_gcr_repo"
