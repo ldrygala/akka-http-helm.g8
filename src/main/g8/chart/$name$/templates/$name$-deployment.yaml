@@ -36,18 +36,14 @@ spec:
         livenessProbe:
           httpGet:
             path: /health/alive
-            port: containerPort
+            port: 8080
           initialDelaySeconds: 30
           periodSeconds: 5
           timeoutSeconds: 10
         readinessProbe:
           httpGet:
             path: /health/ready
-            port: containerPort
+            port: 8080
           initialDelaySeconds: 30
           periodSeconds: 5
           failureThreshold: 2
-        ports:
-        - name: containerPort
-          protocol: TCP
-          containerPort: 8000
