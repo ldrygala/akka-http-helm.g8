@@ -9,6 +9,15 @@ concurrency:
   limit: 2  
 
 steps:
+- name: verify-helm-chart
+  image: gcr.io/gwi-host-net/drone-helm:2.14.3
+  commands:
+    - cd chart/export-manager
+    - helm template ./ -f staging/secrets.yaml -f staging/values.yaml
+    - helm lint ./ -f staging/secrets.yaml -f staging/values.yaml
+    - helm template ./ -f production/secrets.yaml -f production/values.yaml
+    - helm lint ./ -f production/secrets.yaml -f production/values.yaml
+    
 - name: build
   image: lustefaniak/sbt:graalvm_$sbt_version$_$scala_version$
   commands:
