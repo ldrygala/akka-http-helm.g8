@@ -21,7 +21,7 @@ steps:
 - name: build
   image: lustefaniak/sbt:graalvm_$sbt_version$_$scala_version$
   commands:
-  - sbt -Dsbt.ivy.home=/cache/.ivy2 -Divy.home=/cache/.ivy2 -Dfile.encoding=utf-8 coverage test:test coverageReport
+  - sbt -Dsbt.ivy.home=/cache/.ivy2 -Divy.home=/cache/.ivy2 -Dfile.encoding=utf-8 coverage test:test it:test coverageReport
   volumes:
   - name: sbtCache
     path: /cache
@@ -108,7 +108,7 @@ steps:
     helm_values_files:
     - ./chart/$name$/values.yaml
     - ./chart/$name$/staging/values.yaml
-    # - ./chart/$name$/staging/secrets.yaml
+    - ./chart/$name$/staging/secrets.yaml
   when:
     event:
     - promote
@@ -133,7 +133,7 @@ steps:
     helm_values_files:
     - ./chart/$name$/values.yaml
     - ./chart/$name$/production/values.yaml
-    # - ./chart/$name$/production/secrets.yaml
+    - ./chart/$name$/production/secrets.yaml
   when:
     event:
     - promote
