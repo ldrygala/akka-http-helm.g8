@@ -2,7 +2,6 @@ package $package$
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.stream.ActorMaterializer
 import $package$.route.{ApiRoute, HealthCheckRoute, SwaggerSiteRoute}
 import com.typesafe.scalalogging.StrictLogging
 
@@ -11,7 +10,6 @@ import scala.util.{Failure, Success}
 
 object Main extends App with StrictLogging {
   implicit val actorSystem: ActorSystem           = ActorSystem("$name$")
-  implicit val materializer: ActorMaterializer    = ActorMaterializer()
   implicit val executionContext: ExecutionContext = actorSystem.dispatcher
   
   val host = "0.0.0.0"
@@ -24,7 +22,7 @@ object Main extends App with StrictLogging {
     apiRoutes = Seq.empty
   )
 
-  val serverBinding = Http().bindAndHandle(apiRoute.route, host, port)
+  val serverBinding = Http().newServerAt(host, port).bindFlow(apiRoute.route)
   serverBinding.onComplete {
     case Success(_) =>
       logger.info("$name$ is up and running on " + host + ":" + port)
