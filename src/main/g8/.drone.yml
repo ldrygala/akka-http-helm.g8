@@ -10,7 +10,7 @@ concurrency:
 
 steps:
 - name: verify-helm-chart
-  image: gcr.io/gwi-host-net/drone-helm:2.14.3
+  image: gcr.io/gwi-host-net/drone-helm:latest
   commands:
     - cd chart/export-manager
     - helm template ./ -f staging/secrets.yaml -f staging/values.yaml
@@ -19,7 +19,7 @@ steps:
     - helm lint ./ -f production/secrets.yaml -f production/values.yaml
     
 - name: build
-  image: lustefaniak/sbt:graalvm_$sbt_version$_$scala_version$
+  image: lustefaniak/sbt:graalvm11_$sbt_version$_$scala_version$
   commands:
   - sbt -Dsbt.ivy.home=/cache/.ivy2 -Divy.home=/cache/.ivy2 -Dfile.encoding=utf-8 coverage test:test it:test coverageReport
   volumes:
@@ -37,7 +37,7 @@ steps:
   - build
 
 - name: build-image
-  image: lustefaniak/sbt:graalvm_$sbt_version$_$scala_version$
+  image: lustefaniak/sbt:graalvm11_$sbt_version$_$scala_version$
   commands:
   - rm -rf project/target
   - sbt -Dsbt.ivy.home=/cache/.ivy2 -Divy.home=/cache/.ivy2 -Dfile.encoding=utf-8 docker:stage
@@ -93,7 +93,7 @@ steps:
   - build-image  
 
 - name: helm-deploy-staging
-  image: gcr.io/gwi-host-net/drone-helm:2.14.3
+  image: gcr.io/gwi-host-net/drone-helm:latest
   settings:
     gke_cluster_name: $staging_gke_cluster_name$
     gke_project: $staging_gke_project$
@@ -118,7 +118,7 @@ steps:
   - push-image-staging
 
 - name: helm-deploy-production
-  image: gcr.io/gwi-host-net/drone-helm:2.14.3
+  image: gcr.io/gwi-host-net/drone-helm:latest
   settings:
     gke_cluster_name: $production_gke_cluster_name$
     gke_project: $production_gke_project$
